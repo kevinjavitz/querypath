@@ -5,6 +5,7 @@
   "homepage": "https://github.com/technosophos/querypath",
   "license": "MIT",
   "keywords": ["xml", "html", "css", "jquery", "xslt"],
+    "version": "3.0.6",
   "require" : {
     "php" : ">=5.3.0",
     "masterminds/html5": "2.*"
