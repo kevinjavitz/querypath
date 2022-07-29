@@ -23,7 +23,7 @@ namespace QueryPath\CSS;
  *
  * @b Usage
  *
- * This class is an event handler. It can be plugged into an Parser and 
+ * This class is an event handler. It can be plugged into an Parser and
  * receive the events the Parser generates.
  *
  * This class is also an iterator. Once the parser has completed, the
@@ -58,6 +58,11 @@ class Selector implements EventHandler, \IteratorAggregate, \Countable {
     $this->selectors[$this->groupIndex][] = $this->currSelector;
   }
 
+    /**
+     * @return \ArrayIterator
+     *
+     */
+    #[\ReturnTypeWillChange]
   public function getIterator() {
     return new \ArrayIterator($this->selectors);
   }
@@ -69,6 +74,7 @@ class Selector implements EventHandler, \IteratorAggregate, \Countable {
    * necessary to get the selector array and manipulate it, this
    * method can be used.
    */
+    #[\ReturnTypeWillChange]
   public function toArray() {
     return $this->selectors;
   }

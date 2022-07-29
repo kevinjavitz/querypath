@@ -7,7 +7,7 @@
  * was done for a few reasons:
  * - The library has been refactored, and it made more sense to call the top
  *   level class QueryPath. This is not the top level class.
- * - There have been requests for a JSONQuery class, which would be the 
+ * - There have been requests for a JSONQuery class, which would be the
  *   natural complement of DOMQuery.
  */
 
@@ -97,7 +97,9 @@ class DOMQuery implements \QueryPath\Query, \IteratorAggregate, \Countable {
    * @see qp()
    */
   public function __construct($document = NULL, $string = NULL, $options = array()) {
-    $string = trim($string);
+      if($string != null){
+          $string = trim($string);
+      }
     $this->options = $options + Options::get() + $this->options;
 
     $parser_flags = isset($options['parser_flags']) ? $options['parser_flags'] : self::DEFAULT_PARSER_FLAGS;
@@ -3986,7 +3988,7 @@ class DOMQuery implements \QueryPath\Query, \IteratorAggregate, \Countable {
    * @return Iterable
    *  Returns an iterator.
    */
-	#[\ReturnTypeWillChange] 
+	#[\ReturnTypeWillChange]
   public function getIterator() {
     $i = new QueryPathIterator($this->matches);
     $i->options = $this->options;
