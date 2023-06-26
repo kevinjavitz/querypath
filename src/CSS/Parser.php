@@ -31,6 +31,7 @@ class Parser
     private $strict = false;
 
     protected $DEBUG = false;
+    private $originalString;
 
     /**
      * Construct a new CSS parser object. This will attempt to
