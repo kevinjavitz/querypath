@@ -1,7 +1,7 @@
 {
     "name": "querypath/querypath",
     "type": "library",
-    "version": "3.0.7",
+    "version": "3.0.8",
     "description": "HTML/XML querying (CSS 4 or XPath) and processing (like jQuery)",
     "homepage": "https://github.com/arthurkushman/querypath",
     "license": "MIT",

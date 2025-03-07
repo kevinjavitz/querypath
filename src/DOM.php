@@ -39,6 +39,8 @@ abstract class DOM implements Query, \IteratorAggregate, \Countable
     protected $errTypes = 771; //E_ERROR; | E_USER_ERROR;
 
     protected $document;
+
+    private $length;
     /**
      * The base DOMDocument.
      */
@@ -50,6 +52,10 @@ abstract class DOM implements Query, \IteratorAggregate, \Countable
         'ignore_parser_warnings'       => false,
         'escape_xhtml_js_css_sections' => self::JS_CSS_ESCAPE_CDATA_CCOMMENT,
     ];
+    /**
+     * @var array|mixed|\SplObjectStorage
+     */
+    private $last;
 
     /**
      * Constructor.
